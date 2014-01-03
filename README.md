@@ -10,13 +10,14 @@ I made pull request to fix an issue (https://github.com/smartiniOnGitHub/grails-
 
 Meanwhile, you can grab the plugin from (https://github.com/arief-hidayat/grails-angularjs-resources/tree/fix-js-map) and do "grails refresh-dependencies" + "grails maven-install".
 
+### How to Use
 
 In BuildConfig.groovy
 ```
         runtime ":angularjs-ui-bootstrap:0.9.0-SNAPSHOT"
 ```
 
-In ApplicationResources.groovy add dependency to "angular-bootstrap"
+create module that depends on "angular-bootstrap" in ApplicationResources.groovy 
 ```
 modules = {
     application {

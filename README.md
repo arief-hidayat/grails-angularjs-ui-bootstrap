@@ -28,6 +28,10 @@ modules = {
 ```
 
 Example.js and the following page is taken from angular-bootstrap homepage.
+The difference is only on the head.
+
+Note that this plugin comes with default layout "angularBody". if you don't define ng-app in the body, it will use default value ('myApp').
+
 ```
 	<!doctype html>
 	<html>

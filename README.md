@@ -3,7 +3,13 @@ grails-angularjs-ui-bootstrap
 
 grails plugin for angular ui bootstrap
 
-dependency: grails angularjs resources plugin. currently it depends on version 1.2.6 which has not been released.
+dependency: grails angularjs resources plugin.
+
+Currently, this plugin depends on version 1.2.6 which has not been released.
+I made pull request to fix an issue (https://github.com/smartiniOnGitHub/grails-angularjs-resources/pull/14).
+
+Meanwhile, you can grab the plugin from (https://github.com/arief-hidayat/grails-angularjs-resources/tree/fix-js-map) and do "grails refresh-dependencies" + "grails maven-install".
+
 
 In BuildConfig.groovy
 ```

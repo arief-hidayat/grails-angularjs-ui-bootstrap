@@ -1,0 +1,13 @@
+<plugin name='angularjs-ui-bootstrap' version='0.9.0-SNAPSHOT' grailsVersion='2.0 &gt; *'>
+  <author>Arief Hidayat</author>
+  <authorEmail>mr.arief.hidayat@gmail.com</authorEmail>
+  <title>Grails Angular Ui Bootstrap Plugin</title>
+  <description>Angular UI Bootstrap JS resources plugin.
+</description>
+  <documentation>http://grails.org/plugin/grails-angular-ui-bootstrap</documentation>
+  <type>AngularjsUiBootstrapGrailsPlugin</type>
+  <resources>
+    <resource>AngularjsUiBootstrapConfig</resource>
+    <resource>AngularjsUiBootstrapPluginResources</resource>
+  </resources>
+</plugin>

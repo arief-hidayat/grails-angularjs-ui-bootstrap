@@ -30,7 +30,7 @@ modules = {
 Example.js and the following page is taken from angular-bootstrap homepage.
 ```
 	<!doctype html>
-	<html ng-app="plunker">
+	<html>
 	<head>
 	    <meta name="layout" content="angularBody"/>
 	    <r:require module="application" />

@@ -18,13 +18,39 @@ modules = {
 }
 ```
 
-Of course you need to create your own page and javascript that.
+That's it!
 
-Example.js and the following page is taken from angular-bootstrap homepage (http://angular-ui.github.io/bootstrap/).
+Of course you need to create your own page and javascript that uses the angular-bootstrap.
 
-Note that: The difference is only on the head.
-This plugin comes with default layout "angularBody". If you don't define ng-app (e.g. 'plunker') in the body, it will use default value ('myApp').
+Let's take an example from angular-bootstrap homepage (http://angular-ui.github.io/bootstrap/).
 
+Create example.js under WEB-INF/js folder
+```
+angular.module('plunker', ['ui.bootstrap']);
+function AccordionDemoCtrl($scope) {
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+    {
+      title: "Dynamic Group Header - 1",
+      content: "Dynamic Group Body - 1"
+    },
+    {
+      title: "Dynamic Group Header - 2",
+      content: "Dynamic Group Body - 2"
+    }
+  ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
+}
+```
+
+Replace grails-app/views/index.gsp content with the following.
 ```
 	<!doctype html>
 	<html>
@@ -61,8 +87,9 @@ This plugin comes with default layout "angularBody". If you don't define ng-app 
 	</body>
 	</html>
 ```
+Note that: The difference is only on the head, the rest are just normal webpage with angularjs.
+This plugin comes with default layout "angularBody". If you don't define ng-app (e.g. 'plunker') in the body, it will use default value ('myApp').
 
-This plugin will automatically detect the usage of angularjs resources plugin and use that 
 
 ### Override Resources Definition
 

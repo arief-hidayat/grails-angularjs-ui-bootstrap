@@ -1,6 +1,6 @@
 class AngularjsUiBootstrapGrailsPlugin {
     // the plugin version
-    def version = "0.9.0-SNAPSHOT"
+    def version = "0.9.0-M1"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.0 > *"
     // resources that are excluded from plugin packaging
@@ -37,8 +37,8 @@ Angular UI Bootstrap JS resources plugin.
     def scm = [ url: "https://github.com/arief-hidayat/grails-angular-ui-bootstrap/" ]
 
 
-    def dependsOn = ['angularjs-resources':'1.0.8 > *']
-
+    //def dependsOn = ['angularjs-resources':'1.0.8 > *']
+    def loadAfter = ['jquery','angularjs-resources']
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before

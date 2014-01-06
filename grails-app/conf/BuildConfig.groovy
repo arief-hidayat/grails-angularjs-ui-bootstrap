@@ -15,7 +15,6 @@ grails.project.fork = [
     // configure settings for the Console UI JVM
     console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 ]
-// grails.plugin.location.'angularjs-resources' = "../grails-angularjs-resources"
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -40,7 +39,9 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":angularjs-resources:1.2.6"
+
+        runtime ':resources:1.2.1'
+        //runtime ":angularjs-resources:1.2.6"
 
         build(":release:3.0.1",
               ":rest-client-builder:1.0.3") {

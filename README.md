@@ -1,6 +1,8 @@
 grails-angularjs-ui-bootstrap
 =============================
 
+Grails resources plugin for http://angular-ui.github.io/bootstrap/
+
 ### How to Use
 
 In BuildConfig.groovy
@@ -8,7 +10,13 @@ In BuildConfig.groovy
         runtime ":angularjs-ui-bootstrap:0.9.0-M1"
 ```
 
-create module that depends on "angular-bootstrap" in ApplicationResources.groovy 
+That's it!
+
+Of course you need to create your own page and javascript that uses the angular-bootstrap.
+
+Let's take an example from angular-bootstrap homepage (http://angular-ui.github.io/bootstrap/).
+Create resource module that depends on "angular-bootstrap" in ApplicationResources.groovy 
+
 ```
 modules = {
     application {
@@ -17,12 +25,6 @@ modules = {
     }
 }
 ```
-
-That's it!
-
-Of course you need to create your own page and javascript that uses the angular-bootstrap.
-
-Let's take an example from angular-bootstrap homepage (http://angular-ui.github.io/bootstrap/).
 
 Create example.js under WEB-INF/js folder
 ```

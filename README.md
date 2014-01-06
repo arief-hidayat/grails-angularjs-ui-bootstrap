@@ -1,20 +1,11 @@
 grails-angularjs-ui-bootstrap
 =============================
 
-grails plugin for angular ui bootstrap
-
-dependency: grails angularjs resources plugin.
-
-Currently, this plugin depends on version 1.2.6 which has not been released.
-I made pull request to fix an issue (https://github.com/smartiniOnGitHub/grails-angularjs-resources/pull/14).
-
-Meanwhile, you can grab the plugin from (https://github.com/arief-hidayat/grails-angularjs-resources/tree/fix-js-map) and do "grails refresh-dependencies" + "grails maven-install".
-
 ### How to Use
 
 In BuildConfig.groovy
 ```
-        runtime ":angularjs-ui-bootstrap:0.9.0-SNAPSHOT"
+        runtime ":angularjs-ui-bootstrap:0.9.0-M1"
 ```
 
 create module that depends on "angular-bootstrap" in ApplicationResources.groovy 
@@ -27,10 +18,12 @@ modules = {
 }
 ```
 
-Example.js and the following page is taken from angular-bootstrap homepage.
-The difference is only on the head.
+Of course you need to create your own page and javascript that.
 
-Note that this plugin comes with default layout "angularBody". if you don't define ng-app in the body, it will use default value ('myApp').
+Example.js and the following page is taken from angular-bootstrap homepage (http://angular-ui.github.io/bootstrap/).
+
+Note that: The difference is only on the head.
+This plugin comes with default layout "angularBody". If you don't define ng-app (e.g. 'plunker') in the body, it will use default value ('myApp').
 
 ```
 	<!doctype html>
@@ -68,3 +61,24 @@ Note that this plugin comes with default layout "angularBody". if you don't defi
 	</body>
 	</html>
 ```
+
+This plugin will automatically detect the usage of angularjs resources plugin and use that 
+
+### Override Resources Definition
+
+Optionally can define one of the following in Config.groovy
+```
+grails.resources.angularjs.bootstrap.angularResource = [
+    url:[plugin: 'angular-ui-bootstrap', dir:'js/angular', file:"angular.min.js"],
+    exclude:'minify', disposition: 'head', linkOverride: "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"]
+grails.resources.angularjs.bootstrap.bootstrapCssResource = [
+    url: [plugin: 'angular-ui-bootstrap', dir:'css', file:'bootstrap.min.css'] ,
+    linkOverride: 'http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css']
+grails.resources.angularjs.bootstrap.angularBootstrapResource = [
+    url:[plugin: 'angular-ui-bootstrap', dir:'js/angular', file:'ui-bootstrap-tpls-0.9.0.min.js'],
+    exclude:'minify', disposition : "head", linkOverride: "http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.min.js"]
+```
+
+This will be useful if you need to use bootstrap css or angular/angular-bootstrap javascript that is different from the one packaged in the plugin.
+
+Note that if you use this plugin together with angularjs-resources plugin, this plugin will use 'angular' resource defined in angularjs-resources plugin. So, your 'grails.resources.angularjs.bootstrap.angularResource' configuration will be omitted.
